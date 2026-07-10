@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const nav = function Navbar() {
     return (
-        <div className="flex justify-center fixed left-180">
+        <div className="flex justify-center fixed left-0 right-0">
             <ul className="flex flex-row text-xl gap-20 pt-15">
               <li><Link href="/">Home</Link></li>
               <li><Link href="/work">Work</Link></li>
