@@ -1,35 +1,36 @@
 import Image from "next/image";
 import nav from "./nav/navbar";
+import { Poppins } from "next/font/google";
 
+const poppins = Poppins({
+  weight: ["400"],
+  subsets: ["latin"],
+});
 export default function Home() {
   return (
-    <div className="">
-      {nav()}
-      <br />
-      <div className="flex flex-row justify-center gap-30 pt-30">
-        <div className="">
-          <Image className="rounded-lg shadow-lg" src="/images/image.jpeg" alt="profile" width={150} height={150}/>
+    <div className="flex flex-col gap-20 items-center p-3">
+      <div>{nav()}</div>
+      <div className="flex justify-between gap-10">
+        <div>
+          <Image className="rounded-full" src="/images/image.jpeg" alt="profile" width={50} height={50}/>
         </div>
-        <div className="flex flex-col gap-5">
-          <h1 className="font-bold text-5xl">About Me</h1>
-          <p className="text-md font-medium">
-            I am a 17 year old ,male ,first year student of<br /> 
-            Computer science and Engineering at Mar Baselios<br /> 
-            College of Engineering and Technology.I am a web developer<br />
-            and I have a good knowledge of react framework,<br />
-            HTML, CSS and Javascript/typescript 
+        <div>
+          <p className="text-lg font-bold">
+            I'm <span className="text-red-700">Anantha Krishnan</span>,<br />
+            A frontend developer and a web designer.
           </p>
         </div>
       </div>
-      <div className="flex flex-col items-center pt-30 gap-4">
-        <h2 className="text-4xl  font-extrabold">Strengths</h2>
-        <ul className="text-xl">
-          <li>Web Designing</li>
-          <li>HTML</li>
-          <li>CSS</li>
-          <li>JavaScript</li>
-          <li>React</li> 
-        </ul>
+      <div className={poppins.className}>
+        <div className="flex flex-col gap-3">
+          <h1 className="text-lg font-bold">About Me</h1>
+          <p className="text-lg">
+            I'm a first year college student passionate<br />
+            about web development and design. I have a strong<br />
+            interest in creating visually appealing and user-friendly<br />
+            websites.
+          </p>
+        </div>
       </div>
     </div>
   );
