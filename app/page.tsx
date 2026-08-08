@@ -1,6 +1,8 @@
+"use client"
 import Image from "next/image";
 import nav from "./nav/navbar";
 import { Poppins } from "next/font/google";
+import { useState } from "react";
 
 const poppins = Poppins({
   weight: ["400"],
@@ -8,29 +10,20 @@ const poppins = Poppins({
 });
 export default function Home() {
   return (
-    <div className="flex flex-col gap-20 items-center p-3">
-      <div>{nav()}</div>
-      <div className="flex justify-between gap-10">
-        <div>
-          <Image className="rounded-full" src="/images/image.jpeg" alt="profile" width={50} height={50}/>
-        </div>
-        <div>
-          <p className="text-lg font-bold">
-            I'm <span className="text-red-700">Anantha Krishnan</span>,<br />
-            A frontend developer and a web designer.
-          </p>
-        </div>
+    <div className="flex flex-col gap-35 p-10 ">
+      <div>
+        {nav()}
       </div>
-      <div className={poppins.className}>
-        <div className="flex flex-col gap-3">
-          <h1 className="text-lg font-bold">About Me</h1>
-          <p className="text-lg">
-            I'm a first year college student passionate<br />
-            about web development and design. I have a strong<br />
-            interest in creating visually appealing and user-friendly<br />
-            websites.
-          </p>
-        </div>
+      <div className="flex flex-col items-center font-semibold lg:items-baseline text-2xl  lg:text-7xl">
+        <h1 className={poppins.className}>Anantha Krishnan</h1>
+        <h2 className="text-gray-500 lg:text-3xl text-xl">Creative Developer</h2>
+      </div>
+      <div className="text-gray-400 flex flex-col gap-10 text-xl">
+        <p>Base : India</p>
+        <p>Status : Undergraduate</p>
+      </div>
+      <div>
+        <a className="p-3 bg-black text-white cursor-pointer rounded-lg shadow-black shadow-lg" href="/work">Projects &#8599;</a>
       </div>
     </div>
   );

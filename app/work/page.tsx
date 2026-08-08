@@ -1,25 +1,41 @@
+"use client"
+import Image from "next/image";
 import nav from "../nav/navbar";
-import Link from "next/link";
+import { Poppins } from "next/font/google";
+import { useState } from "react";
 
-export default function project() {
-    return (
-        <div className="flex flex-col items-center justify-center gap-30 pt-10">
-            {nav()}
-            <div>
-                <h1 className="font-extrabold text-5xl">PROJECTS</h1>
-            </div>
-            <div className="flex flex-col gap-5">
-                <h1 className="font-bold text-lg">A test website of firebase athentication</h1>
-                <Link href="https://github.com/ananthakrish-08/firebase-auth.git" target="_blank">
-                    https://github.com/ananthakrish-08/firebase-auth.git
-                </Link>
-            </div>
-            <div className="flex flex-col gap-5">
-                <h1 className="font-bold text-lg">A basic counting website created using Nextjs</h1>
-                <Link href="https://github.com/ananthakrish-08/Next-js-firebase.git" target="_blank">
-                    https://github.com/ananthakrish-08/Next-js-firebase.git
-                </Link>
-            </div>
+const poppins = Poppins({
+  weight: ["400"],
+  subsets: ["latin"],
+});
+export default function Home() {
+  return (
+    <div className="flex flex-col gap-35 p-3">
+      <div>
+        <div className="">
+          {nav()}
         </div>
-    )
+      </div>
+      <div className={poppins.className}>
+        <h1 className="text-gray-400 text-2xl">Projects</h1>
+        <br />
+        <p className="text-5xl font-semibold">
+          Projects that explore<br />
+          interactive front-end<br />
+          development .
+        </p>
+      </div>
+      <div>
+        <a href="https://counter-app-tau-ten.vercel.app/">
+          <Image
+           className="rounded-lg"
+           src="/images/counter.png"
+           alt="couner-app"
+           width={300}
+           height={300}
+          />
+        </a>
+      </div>
+    </div>
+  );
 }
